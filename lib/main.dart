@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height:  MediaQuery.of(context).size.width / 2,
               child: CachedNetworkImage(
                 imageUrl: widget.url,
-                fit: BoxFit.cover,
+                fit: BoxFit.contain,
               ),
             ) : SizedBox.shrink(),
             Text(
