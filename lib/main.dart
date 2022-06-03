@@ -19,6 +19,7 @@ class _Wlabel extends State<Wlabel> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      themeMode: ThemeMode.dark,
       title: widget.name,
       theme: ThemeData(
         primarySwatch: widget.baseColor,
@@ -53,16 +54,19 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             widget.url.isNotEmpty ?
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width / 2,
               height:  MediaQuery.of(context).size.width / 2,
               child: CachedNetworkImage(
                 imageUrl: widget.url,
-                fit: BoxFit.contain,
+                fit: BoxFit.scaleDown,
               ),
-            ) : SizedBox.shrink(),
-            Text(
-              '${widget.title}',
+            ) : const SizedBox.shrink(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                widget.title, style: const TextStyle(color: Colors.teal),
+              ),
             ),
           ],
         ),
