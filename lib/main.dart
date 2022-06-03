@@ -5,10 +5,11 @@ class Wlabel extends StatefulWidget {
 
   String name = "WLabel";
   String iconUrl = "";
+  ThemeData? theme = ThemeData.light();
   MaterialColor? baseColor = Colors.blue;
 
 
-  Wlabel({Key? key, required this.name, required this.iconUrl, this.baseColor}) : super(key: key);
+  Wlabel({Key? key, required this.name, required this.iconUrl, this.theme, this.baseColor}) : super(key: key);
 
   @override
   State<Wlabel> createState() => _Wlabel();
@@ -21,7 +22,7 @@ class _Wlabel extends State<Wlabel> {
     return MaterialApp(
       themeMode: ThemeMode.dark,
       title: widget.name,
-      theme: ThemeData.dark(),
+      theme: widget.theme,
       home:  MyHomePage(title: widget.name, url: widget.iconUrl),
     );
   }
