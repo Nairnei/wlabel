@@ -21,9 +21,7 @@ class _Wlabel extends State<Wlabel> {
     return MaterialApp(
       themeMode: ThemeMode.dark,
       title: widget.name,
-      theme: ThemeData(
-        primarySwatch: widget.baseColor,
-      ),
+      theme: ThemeData.dark(),
       home:  MyHomePage(title: widget.name, url: widget.iconUrl),
     );
   }
